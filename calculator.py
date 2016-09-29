@@ -9,28 +9,41 @@ from arithmetic import *
 
 
 # Your code goes here
-def calc2(input):
+def calc2():
     """Calculates numbers and operations in a specific format"""
-    
+
     command = raw_input("> ")
+    print "I'm here!!!" + command
     while command != "q":
-        tokens = input.split(" ")
-        if tokens[0] == "+":
-            add(tokens[1], tokens[2])
-        elif tokens[0] == "-":
-            subtract(tokens[1], tokens[2])
-        elif tokens[0] == "*":
-            multiply(tokens[1], tokens[2])
-        elif tokens[0] == "/":
-            divide(tokens[1], tokens[2])
-        elif tokens[0] == "square":
-            square(tokens[1])
-        elif tokens[0] == "cube":
-            cube(tokens[1])
-        elif tokens[0] == "pow":
-            power(tokens[1], tokens[2])
-        elif tokens[0] == "mod":
-            mod(tokens[1], tokens[2])
+        tokens = command.split(" ")
+        operand = tokens[0]
+        if len(tokens) == 2:
+            num1 = int(tokens[1])
+            if operand == "square":
+                print square(num1)
+            elif operand == "cube":
+                print cube(num1)
+            else:
+                print "can't read, try +, -, *, /, square, cube, pow, or mod."
+        elif len(tokens) == 3:
+            num1 = int(tokens[1])
+            num2 = int(tokens[2])
+            if operand == "+":
+                print add(num1, num2)
+            elif operand == "-":
+                print subtract(num1, num2)
+            elif operand == "*":
+                print multiply(num1, num2)
+            elif operand == "/":
+                print divide(num1, num2)
+            elif operand == "pow":
+                print power(num1, num2)
+            elif operand == "mod":
+                print mod(num1, num2)
+            else:
+                print "can't read, try +, -, *, /, square, cube, pow, or mod."
         else:
             print "can't read, try +, -, *, /, square, cube, pow, or mod."
-            calc2()
+        command = raw_input("> ")
+
+calc2()
