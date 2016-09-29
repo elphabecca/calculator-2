@@ -13,7 +13,6 @@ def calc2():
     """Calculates numbers and operations in a specific format"""
 
     command = raw_input("> ")
-    print "I'm here!!!" + command
     while command != "q":
         tokens = command.split(" ")
         operand = tokens[0]

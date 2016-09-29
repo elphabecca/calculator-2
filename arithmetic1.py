@@ -1,19 +1,15 @@
-def add(num1, num2):
-    return num1 + num2
 
-def add_moar(*num):
-    sum = 0
-    numb = str(num).split(",")
-    for num in numb:
-        sum+=int(num)
-        numb = numb[1:len(num)-1]
-    return sum
+def add(*nums):
+    sum_all = nums[0]
+    for num in nums[1:]:
+        sum_all += num
+    return sum_all
 
-add_moar(5,4,3,2,1)
-
-def subtract(num1, num2):
-    return num1 - num2
-
+def subtract(*nums):
+    difference = nums[0]
+    for num in nums[1:]:
+        difference -= num
+    return difference
 
 def multiply(num1, num2):
     return num1 * num2
